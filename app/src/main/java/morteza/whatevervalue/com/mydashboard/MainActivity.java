@@ -12,34 +12,40 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 //    Button male, female;
 //    Layout male;
-    androidx.cardview.widget.CardView male,female;
+    androidx.cardview.widget.CardView mason,carpenter,electrician,plumber,repair,painter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        male =  (androidx.cardview.widget.CardView) findViewById((R.id.male));
-        female =  (androidx.cardview.widget.CardView) findViewById((R.id.female));
-        male.setOnClickListener(new View.OnClickListener() {
+        mason =  (androidx.cardview.widget.CardView) findViewById((R.id.mason));
+        carpenter =  (androidx.cardview.widget.CardView) findViewById((R.id.carpenter));
+        electrician =  (androidx.cardview.widget.CardView) findViewById((R.id.electrician));
+        plumber =  (androidx.cardview.widget.CardView) findViewById((R.id.plumber));
+        repair =  (androidx.cardview.widget.CardView) findViewById((R.id.repair));
+        painter = (androidx.cardview.widget.CardView) findViewById((R.id.painter));
+
+        mason.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openActivity();
+                masonActivity();
             }
         });
 
-        female.setOnClickListener(new View.OnClickListener() {
+        carpenter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openActivity2();
+                carpenterActivity();
             }
         });
     }
 
-    public void openActivity() {
-        Toast.makeText(MainActivity.this,"Hey boy", Toast.LENGTH_LONG).show();
+    public void masonActivity() {
+        Intent intent = new Intent(this, Main2Activity.class);
+        startActivity(intent);
     }
 
 
-    public void openActivity2() {
-        Toast.makeText(MainActivity.this,"Hey girl", Toast.LENGTH_LONG).show();
+    public void carpenterActivity() {
+        Toast.makeText(MainActivity.this,"Hey carpenter", Toast.LENGTH_LONG).show();
     }
 }
